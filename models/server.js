@@ -1,5 +1,5 @@
 const express = require('express');
-//const cors = require('cors')
+const cors = require('cors')
 //const { get } = require('../routes/usuarios');
 
 class Server{
@@ -10,12 +10,12 @@ class Server{
         
         this.middlewares();
 
-        this.routes;
+        this.routes();
     }
 
     middlewares(){
-        //this.app.use(cors());
-        //this.app.use(express.json());
+        this.app.use(cors());
+        this.app.use(express.json());
         this.app.use(express.static('public'));
     }
 
